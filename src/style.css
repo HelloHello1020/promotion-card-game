@@ -98,7 +98,7 @@
     background-color: #00aaff;
     opacity: 0.75;
     z-index: 1000;
-    animation: splash 4s forwards;
+    animation: splash 5s forwards;
 }
   
 @keyframes fadeOut {

@@ -10,7 +10,7 @@ function App() {
   const [messages, setMessages] = useState({ 1: "Discount?", 2: "Discount?", 3: "Discount?" });
   const [isSplashing, setIsSplashing] = useState(false);
   const [splashFinished, setSplashFinished] = useState(false);
-  const discountArray = ["3%", "5%", "10%", "15", ""];
+  const discountArray = ["3%", "5%", "10%", "15%", ""];
 
   const handleLogin = () => {
     if (voucherNumber.trim() !== "") {
@@ -23,7 +23,7 @@ function App() {
       setTimeout(() => {
         setSplashFinished(true); // Trigger card game page after splash animation
         setIsLoggedIn(true); // Show card game page
-      }, 4250); // Duration matches the splash animation time
+      }, 5100); // Duration matches the splash animation time
     }
   }, [isSplashing]);
 
