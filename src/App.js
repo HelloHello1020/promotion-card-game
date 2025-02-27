@@ -27,7 +27,7 @@ function App() {
         if (docSnap.exists()) {
           const vouchersNumbers = docSnap.data()["vouchers-numbers"];
           // Check if the entered voucher number is in the array
-          if (vouchersNumbers && vouchersNumbers.includes(Number(voucherNumber))) {
+          if (vouchersNumbers && vouchersNumbers.includes(String(voucherNumber))) {
             setVoucherValid(true);
             setIsSplashing(true);
           } else {
