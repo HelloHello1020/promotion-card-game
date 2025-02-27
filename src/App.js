@@ -44,8 +44,8 @@ function App() {
           size="large"
           value={voucherNumber}
           onChange={(e) => setVoucherNumber(e.target.value)}
-          style={{ width: "220px" }}
-          placeholder="Enter your voucher number"
+          style={{ width: "270px" }}
+          placeholder="Enter your voucher number to play"
         />
         <br />
         <Button
