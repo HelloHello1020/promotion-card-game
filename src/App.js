@@ -127,25 +127,25 @@ function App() {
       <img
         src="/thingyan-3-people.png" // Make sure this is the correct path
         alt="decorative"
-        className="bottom-left-image"
+        className="bottom-left-image decoration"
       />
 
       <img
         src="/thingyan-1-people.png" // Make sure this is the correct path
         alt="decorative"
-        className="bottom-right-image"
+        className="bottom-right-image decoration"
       />
 
       <img 
         src="/padauk-flower.png"
         alt="decorative" 
-        className="top-left-image"
+        className="top-left-image decoration"
       />
 
       <img 
         src="/padauk-flower.png"
         alt="decorative" 
-        className="top-right-image"
+        className="top-right-image decoration"
       />
 
     </div>

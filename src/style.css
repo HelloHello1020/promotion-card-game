@@ -163,15 +163,30 @@
     }
 }
 
+@media (max-width: 1000px) {
+    .bottom-left-image {
+        width: 250px;
+    }
+    .bottom-right-image {
+        width: 350px;
+    }
+}
+
 @media (max-width: 850px) {
     .cards-container {
         gap: 5rem;
+    }
+    .bottom-left-image, .bottom-right-image {
+        width: 200px;
     }
 }
 
 @media (max-width: 770px) {
     .cards-container {
         gap: 1rem;
+    }
+    .top-left-image, .top-right-image {
+        width: 100px;
     }
 }
 
@@ -182,8 +197,23 @@
     }
 }
 
+@media (max-width: 600px) {
+    .top-left-image, .top-right-image {
+        width: 70px;
+    }
+}
+
 @media (max-width: 500px) {
     .card-container {
+        width: 150px;
+    }
+    .top-left-image {
+        left: 0;
+    }
+    .top-right-image {
+        right: 0;
+    }
+    .bottom-left-image, .bottom-right-image {
         width: 150px;
     }
 }
@@ -192,6 +222,12 @@
     .card-container {
         width: 120px;
         height: 200px;
+    }
+    .top-left-image, .top-right-image {
+        top: 0;
+    }
+    .bottom-left-image, .bottom-right-image {
+        bottom: 200px;
     }
 }
 
@@ -203,6 +239,9 @@
     .card-message {
         font-size: 18px;
     }
+    .bottom-left-image, .bottom-right-image {
+        width: 120px;
+    }
 }
 
 @media (max-width: 340px) {
@@ -210,6 +249,10 @@
         width: 90px;
         height: 160px;
     }
+    .bottom-left-image, .bottom-right-image {
+        bottom: 300px;
+    }
+
 }
 
 @media (max-width: 300px) {
