@@ -92,7 +92,7 @@ function App() {
           <div className="login-container">
             <h1>Enter Voucher Number</h1>
             <Input
-              type="text"
+              type="password"
               size="large"
               value={voucherNumber}
               onChange={(e) => setVoucherNumber(e.target.value)}
