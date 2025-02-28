@@ -62,6 +62,8 @@ function App() {
 
   return (
     <div className={`app ${splashFinished ? "fade-out" : ""}`}>
+      <div className="overlay"/>
+
       <div className="app-container">
         {isLoggedIn ? (
           <div>
@@ -121,6 +123,31 @@ function App() {
           </div>
         )}
       </div>
+
+      <img
+        src="/thingyan-3-people.png" // Make sure this is the correct path
+        alt="decorative"
+        className="bottom-left-image"
+      />
+
+      <img
+        src="/thingyan-1-people.png" // Make sure this is the correct path
+        alt="decorative"
+        className="bottom-right-image"
+      />
+
+      <img 
+        src="/padauk-flower.png"
+        alt="decorative" 
+        className="top-left-image"
+      />
+
+      <img 
+        src="/padauk-flower.png"
+        alt="decorative" 
+        className="top-right-image"
+      />
+
     </div>
   );
 }
