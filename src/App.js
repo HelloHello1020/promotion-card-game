@@ -90,14 +90,14 @@ function App() {
           </div>
         ) : (
           <div className="login-container">
-            <h1>Enter ID</h1>
+            <h1>Enter Voucher</h1>
             <Input
               type="password"
               size="large"
               value={voucherNumber}
               onChange={(e) => setVoucherNumber(e.target.value)}
-              style={{ width: "270px" }}
-              placeholder="Enter your given ID here to play"
+              style={{ width: "350px" }}
+              placeholder="Enter your purchased voucher number to play"
             />
             <br />
             <Button
