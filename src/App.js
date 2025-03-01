@@ -62,7 +62,7 @@ function App() {
 
   return (
     <div className={`app ${splashFinished ? "fade-out" : ""}`}>
-      <div className="overlay"/>
+      <div className="image-overlay" />
 
       <div className="app-container">
         {isLoggedIn ? (
@@ -108,6 +108,7 @@ function App() {
               size="large"
               className="voucher-submit-button"
               onClick={handleLogin}
+              style={{backgroundColor: "#ffd700"}}
             >
               Submit
             </Button>
@@ -146,6 +147,18 @@ function App() {
         src="/padauk-flower.png"
         alt="decorative" 
         className="top-right-image decoration"
+      />
+
+      <img
+        src="water-gun-shooting-right.png"
+        alt="decorative"
+        className="middle-left-image decoration"
+      />
+
+      <img
+        src="water-gun-shooting-left.png"
+        alt="decorative"
+        className="middle-right-image decoration"
       />
 
     </div>
