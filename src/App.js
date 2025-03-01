@@ -67,10 +67,6 @@ function App() {
       <div className="app-container">
         {isLoggedIn ? (
           <div>
-            <div className="title">
-              <h1>Choose a Card</h1>
-            </div>
-
             <div className="cards-container">
               {[1, 2, 3].map((num) => (
                 <div
@@ -89,12 +85,16 @@ function App() {
                 </div>
               ))}
             </div>
+
+            <div className="title">
+              <h1>Choose a Card Above</h1>
+            </div>
           </div>
         ) : (
           <div className="login-container">
             <h1>Enter Voucher</h1>
             <Input
-              type="password"
+              type="text"
               size="large"
               value={voucherNumber}
               onChange={(e) => setVoucherNumber(e.target.value)}
@@ -138,13 +138,37 @@ function App() {
       />
 
       <img 
-        src="/padauk-flower.png"
+        src="/padauk-from-top.png"
         alt="decorative" 
         className="top-left-image decoration"
       />
 
+      <img
+        src="/padauk-from-top.png"
+        alt="decorative"
+        className="top-left-middle-image decoration"
+      />
+
+      <img
+        src="/padauk-from-top.png"
+        alt="decorative"
+        className="top-left-center-image decoration"
+      />
+
+      <img
+        src="/padauk-from-top.png"
+        alt="decorative"
+        className="top-right-center-image decoration"
+      />
+
+      <img
+        src="/padauk-from-top.png"
+        alt="decorative"
+        className="top-right-middle-image decoration"
+      />
+
       <img 
-        src="/padauk-flower.png"
+        src="/padauk-from-top.png"
         alt="decorative" 
         className="top-right-image decoration"
       />

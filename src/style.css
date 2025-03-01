@@ -1,5 +1,6 @@
 .login-container {
     text-align: center;
+    margin-top: 70px;
 }
 
 .voucher-submit-button {
@@ -19,6 +20,7 @@
     height: 300px;
     perspective: 1000px;
     cursor: pointer;
+    margin-top: 100px;
 }
 
 .cards-container {
@@ -78,11 +80,11 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(/public/water-splashing-bowl-overlay.png);
+    background-image: url(/public/water-bowl-overlay.png);
     background-repeat: repeat;
     background-size: 10%; /* Adjust the size */
     background-position: 50px 50px; /* Adjust spacing between repeats */
-    opacity: 0.8;
+    opacity: 1;
     z-index: -2;
 }
 
@@ -107,21 +109,60 @@
 }
 
 .top-left-image {
-    transform: scaleX(-1);
     position: fixed;
-    top: 20px;  /* Adjust as needed */
-    left: 20px;    /* Adjust as needed */
-    width: 150px;  /* Adjust the size as needed */
+    top: 0px;  /* Adjust as needed */
+    left: 0px;    /* Adjust as needed */
+    width: 250px;  /* Adjust the size as needed */
     height: auto;
     opacity: 0.9;  /* Adjust transparency if needed */
     pointer-events: none;  /* Prevents the image from interfering with user clicks */
 }
 
+.top-left-middle-image {
+    position: fixed;
+    top: 0px;  /* Adjust as needed */
+    left: 250px;    /* Adjust as needed */
+    width: 250px;  /* Adjust the size as needed */
+    height: auto;
+    opacity: 0.9;  /* Adjust transparency if needed */
+    pointer-events: none;
+}
+
+.top-left-center-image {
+    position: fixed;
+    top: 0px;  /* Adjust as needed */
+    left: 500px;    /* Adjust as needed */
+    width: 275px;  /* Adjust the size as needed */
+    height: auto;
+    opacity: 0.9;  /* Adjust transparency if needed */
+    pointer-events: none;
+}
+
+.top-right-center-image {
+    position: fixed;
+    top: 0px;  /* Adjust as needed */
+    right: 500px;    /* Adjust as needed */
+    width: 275px;  /* Adjust the size as needed */
+    height: auto;
+    opacity: 0.9;  /* Adjust transparency if needed */
+    pointer-events: none;
+}
+
+.top-right-middle-image {
+    position: fixed;
+    top: 0px;  /* Adjust as needed */
+    right: 250px;    /* Adjust as needed */
+    width: 250px;  /* Adjust the size as needed */
+    height: auto;
+    opacity: 0.9;  /* Adjust transparency if needed */
+    pointer-events: none;
+}
+
 .top-right-image {
     position: fixed;
-    top: 20px;  /* Adjust as needed */
-    right: 20px;    /* Adjust as needed */
-    width: 150px;  /* Adjust the size as needed */
+    top: 0px;  /* Adjust as needed */
+    right: 0px;    /* Adjust as needed */
+    width: 250px;  /* Adjust the size as needed */
     height: auto;
     opacity: 0.9;  /* Adjust transparency if needed */
     pointer-events: none;  /* Prevents the image from interfering with user clicks */
@@ -214,7 +255,7 @@
         width: 200px;
     }
     .top-left-image, .top-right-image {
-        width: 100px;
+        width: 200px;
     }
     .image-overlay {
         background-size: 20%;
@@ -228,6 +269,9 @@
     .middle-left-image, .middle-right-image {
         top: 50%;
     }
+    .bottom-left-image, .bottom-right-image {
+        top: 70%;
+    }
 }
 
 @media (max-width: 650px) {
@@ -235,23 +279,20 @@
         width: 180px;
         height: 250px;
     }
+    .app-container {
+        margin-top: 1px;
+    }
 }
 
 @media (max-width: 600px) {
     .top-left-image, .top-right-image {
-        width: 70px;
+        width: 170px;
     }
 }
 
 @media (max-width: 500px) {
     .card-container {
         width: 150px;
-    }
-    .top-left-image {
-        left: 0;
-    }
-    .top-right-image {
-        right: 0;
     }
     .bottom-left-image, .bottom-right-image {
         width: 150px;
@@ -266,15 +307,12 @@
         width: 120px;
         height: 200px;
     }
-    .top-left-image, .top-right-image {
-        top: 0;
-    }
     .bottom-left-image, .bottom-right-image {
         bottom: 200px;
     }
     .middle-left-image, .middle-right-image {
         width: 100px;
-        top: 40%;
+        top: 60%;
     }
 }
 
@@ -298,9 +336,6 @@
     }
     .bottom-left-image, .bottom-right-image {
         bottom: 270px;
-    }
-    .middle-left-image, .middle-right-image {
-        top: 35%;
     }
 }
 
