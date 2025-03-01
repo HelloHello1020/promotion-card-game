@@ -158,6 +158,12 @@ function App() {
       <img
         src="/padauk-from-top.png"
         alt="decorative"
+        className="top-center-image decoration"
+      />
+
+      <img
+        src="/padauk-from-top.png"
+        alt="decorative"
         className="top-right-center-image decoration"
       />
 
