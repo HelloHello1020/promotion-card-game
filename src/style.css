@@ -110,63 +110,75 @@
 
 .top-left-image {
     position: fixed;
-    top: 0px;  /* Adjust as needed */
-    left: 0px;    /* Adjust as needed */
-    width: 250px;  /* Adjust the size as needed */
+    top: 0%;
+    left: 0%;
+    width: 15%;
     height: auto;
-    opacity: 0.9;  /* Adjust transparency if needed */
-    pointer-events: none;  /* Prevents the image from interfering with user clicks */
+    opacity: 0.9;
+    pointer-events: none;
 }
 
 .top-left-middle-image {
     position: fixed;
-    top: 0px;  /* Adjust as needed */
-    left: 250px;    /* Adjust as needed */
-    width: 250px;  /* Adjust the size as needed */
+    top: 0%;
+    left: 15%;
+    width: 15%;
     height: auto;
-    opacity: 0.9;  /* Adjust transparency if needed */
+    opacity: 0.9;
     pointer-events: none;
 }
 
 .top-left-center-image {
     position: fixed;
-    top: 0px;  /* Adjust as needed */
-    left: 500px;    /* Adjust as needed */
-    width: 275px;  /* Adjust the size as needed */
+    top: 0%;
+    left: 30%;
+    width: 16%;
     height: auto;
-    opacity: 0.9;  /* Adjust transparency if needed */
+    opacity: 0.9;
+    pointer-events: none;
+}
+
+.top-center-image {
+    position: fixed;
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 17%;
+    height: auto;
+    opacity: 0.9;
     pointer-events: none;
 }
 
 .top-right-center-image {
     position: fixed;
-    top: 0px;  /* Adjust as needed */
-    right: 500px;    /* Adjust as needed */
-    width: 275px;  /* Adjust the size as needed */
+    top: 0%;
+    right: 30%;
+    width: 16%;
     height: auto;
-    opacity: 0.9;  /* Adjust transparency if needed */
+    opacity: 0.9;
     pointer-events: none;
 }
 
 .top-right-middle-image {
     position: fixed;
-    top: 0px;  /* Adjust as needed */
-    right: 250px;    /* Adjust as needed */
-    width: 250px;  /* Adjust the size as needed */
+    top: 0%;
+    right: 15%;
+    width: 15%;
     height: auto;
-    opacity: 0.9;  /* Adjust transparency if needed */
+    opacity: 0.9;
     pointer-events: none;
 }
 
 .top-right-image {
     position: fixed;
-    top: 0px;  /* Adjust as needed */
-    right: 0px;    /* Adjust as needed */
-    width: 250px;  /* Adjust the size as needed */
+    top: 0%;
+    right: 0%;
+    width: 15%;
     height: auto;
-    opacity: 0.9;  /* Adjust transparency if needed */
-    pointer-events: none;  /* Prevents the image from interfering with user clicks */
+    opacity: 0.9;
+    pointer-events: none;
 }
+
 
 .middle-left-image {
     position: fixed;
@@ -254,9 +266,6 @@
     .bottom-left-image, .bottom-right-image {
         width: 200px;
     }
-    .top-left-image, .top-right-image {
-        width: 200px;
-    }
     .image-overlay {
         background-size: 20%;
     }
@@ -272,6 +281,9 @@
     .bottom-left-image, .bottom-right-image {
         top: 70%;
     }
+    .top-left-image, .top-left-middle-image, .top-left-center-image, .top-center-image, .top-right-center-image, .top-right-middle-image, .top-right-image {
+        width: 120px;
+    }
 }
 
 @media (max-width: 650px) {
@@ -284,12 +296,6 @@
     }
 }
 
-@media (max-width: 600px) {
-    .top-left-image, .top-right-image {
-        width: 170px;
-    }
-}
-
 @media (max-width: 500px) {
     .card-container {
         width: 150px;
@@ -299,6 +305,10 @@
     }
     .image-overlay {
         background-size: 30%;
+    }
+    .top-left-image, .top-left-middle-image, .top-left-center-image, .top-center-image, .top-right-center-image, .top-right-middle-image, .top-right-image {
+        width: 90px;
+        height: 120px;
     }
 }
 
