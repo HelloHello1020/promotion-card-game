@@ -1,5 +1,5 @@
 import "./style.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Watermark, Input, Button, Typography } from "antd"; // Import Typography from Ant Design
 import { LoginOutlined } from "@ant-design/icons";
 import { db } from "./firebase"; // Import Firestore
@@ -15,7 +15,8 @@ function App() {
   const [isSplashing, setIsSplashing] = useState(false);
   const [splashFinished, setSplashFinished] = useState(false);
   const [voucherValid, setVoucherValid] = useState(true); // Initially, set voucherValid to true to avoid showing error on first render
-
+  const chooseCardTitle = useRef();
+  
   const discountArray = ["3%", "5%", "10%", "15%", ""];
   const noDiscountArray = ["We wish you a happy Thingyan", "Have a great year ahead", "Thanks for playing", "Play another time with a new voucher", "Maybe next time!"];
 
@@ -56,6 +57,7 @@ function App() {
     const randomDiscount = discountArray[Math.floor(Math.random() * 4)];
     const randomNoDiscount = noDiscountArray[Math.floor(Math.random() * 4)];
     let newMessage = randomDiscount !== "" ? `${randomDiscount} discount applied!` : `${randomNoDiscount}`;
+    chooseCardTitle.current.innerText = `You have chosen card #${cardNumber}`;
     setMessages((prev) => ({ ...prev, [cardNumber]: newMessage }));
     setFlippedCard(cardNumber);
   };
@@ -77,7 +79,7 @@ function App() {
                   <div className="card-inner">
                     <div className="card-front" />
                     <div className="card-back">
-                      <Watermark className="watermark" content={voucherNumber} height={50} gap={[5, 5]} font={{ color: "rgba(0, 0, 0, 0.05)", fontSize: 35 }}>
+                      <Watermark className="watermark" content={voucherNumber} height={50} gap={[5, 5]} font={{ color: "rgba(0, 170, 255, 0.1)", fontSize: 35 }}>
                         <h4 className="card-message">{messages[num]}</h4>
                       </Watermark>
                     </div>
@@ -87,7 +89,7 @@ function App() {
             </div>
 
             <div className="title">
-              <h1>Choose a Card Above</h1>
+              <h1 class="choose-a-card-title" ref={chooseCardTitle}>Choose a Card Above</h1>
             </div>
           </div>
         ) : (

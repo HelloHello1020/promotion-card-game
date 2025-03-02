@@ -67,6 +67,7 @@
 .card-message {
     margin-top: 50%;
     text-align: center;
+    z-index: -1;
 }
 
 .watermark {
