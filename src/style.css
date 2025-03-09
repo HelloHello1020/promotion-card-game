@@ -75,6 +75,13 @@
     width: 100%;
 }
 
+.duplicate-voucher-error {
+    font-size: 16px;
+    color: red;
+    margin-top: 14px;
+    text-align: center;
+}
+
 .image-overlay {
     position: absolute;
     top: 0;

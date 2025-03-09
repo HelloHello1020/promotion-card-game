@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { Watermark, Input, Button, Typography } from "antd"; // Import Typography from Ant Design
 import { LoginOutlined } from "@ant-design/icons";
 import { db } from "./firebase"; // Import Firestore
-import { doc, getDoc } from "firebase/firestore";
+import { doc, getDoc, setDoc } from "firebase/firestore";
 
 const { Text } = Typography; // Destructure Text from Typography
 
@@ -15,6 +15,7 @@ function App() {
   const [isSplashing, setIsSplashing] = useState(false);
   const [splashFinished, setSplashFinished] = useState(false);
   const [voucherValid, setVoucherValid] = useState(true); // Initially, set voucherValid to true to avoid showing error on first render
+  const [duplicateVoucherError, setDuplicateVoucherError] = useState(""); // State for duplicate voucher error
   const chooseCardTitle = useRef();
   
   const discountArray = ["3%", "5%", "10%", "15%", ""];
@@ -52,14 +53,47 @@ function App() {
     }
   }, [isSplashing]);
 
-  const discountCard = (cardNumber) => {
+  const discountCard = async (cardNumber) => {
     if (flippedCard !== null) return;
+  
     const randomDiscount = discountArray[Math.floor(Math.random() * 4)];
     const randomNoDiscount = noDiscountArray[Math.floor(Math.random() * 4)];
+    
     let newMessage = randomDiscount !== "" ? `${randomDiscount} discount applied!` : `${randomNoDiscount}`;
     chooseCardTitle.current.innerText = `You have chosen card #${cardNumber}`;
     setMessages((prev) => ({ ...prev, [cardNumber]: newMessage }));
     setFlippedCard(cardNumber);
+  
+    // Now save the voucher number and the discount to Firestore
+    if (voucherNumber.trim() !== "") {
+      try {
+        const discountValue = randomDiscount !== "" ? randomDiscount : randomNoDiscount;
+        
+        const docRef = doc(db, "valid-discount-collection", "valid-discount-document");
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+          const existingData = docSnap.data();
+  
+          // Check if the voucher number field already exists
+          if (existingData.hasOwnProperty(voucherNumber)) {
+            console.log("Voucher number already exists. No changes made.");
+            setDuplicateVoucherError("This voucher number has already been used."); // Set the duplicate error message
+            return;
+          }
+        }
+  
+        // If voucher number doesn't exist, update or create the field
+        await setDoc(docRef, {
+          [voucherNumber]: discountValue
+        }, { merge: true });
+
+        // Clear any previous duplicate error
+        setDuplicateVoucherError("");
+      } catch (error) {
+        console.error("Error saving discount data to Firestore: ", error);
+      }
+    }
   };
 
   return (
@@ -88,8 +122,15 @@ function App() {
               ))}
             </div>
 
+            {/* Duplicate voucher error message */}
+            {duplicateVoucherError && (
+              <Text className="duplicate-voucher-error" type="danger">
+                {duplicateVoucherError}
+              </Text>
+            )}
+
             <div className="title">
-              <h1 class="choose-a-card-title" ref={chooseCardTitle}>Choose a Card Above</h1>
+              <h1 className="choose-a-card-title" ref={chooseCardTitle}>Choose a Card Above</h1>
             </div>
           </div>
         ) : (
@@ -173,7 +214,7 @@ function App() {
         src="/padauk-from-top.png"
         alt="decorative"
         className="top-right-middle-image decoration"
-      />
+      /> 
 
       <img 
         src="/padauk-from-top.png"
